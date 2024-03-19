@@ -25,4 +25,12 @@ describe("Bowling game", () => {
     rollMany(17, 0, game);
     expect(game.getScore()).toEqual(16)
   });
+  it("Deberia aplicar la regla del strike si se tiran todos los pinos en un solo tiro", () => {
+    let game = new Game();
+    game.roll(10);
+    game.roll(3);
+    game.roll(4);
+    rollMany(16, 0, game);
+    expect(game.getScore()).toEqual(24)
+  });
 });
