@@ -1,8 +1,12 @@
 export default class Game {
-  roll(pins) {
+  constructor() {
+    this.score = 0;
   }
-  score() {
-    return 0;
+  roll(pins) {
+    this.score += pins;
+  }
+  getScore() {
+    return this.score;
   }
 }
 
