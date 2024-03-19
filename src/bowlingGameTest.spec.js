@@ -33,4 +33,9 @@ describe("Bowling game", () => {
     rollMany(16, 0, game);
     expect(game.getScore()).toEqual(24)
   });
+  it("Debería sumar correctamente el puntaje de un juego perfecto (300 puntos)", () => {
+    let game = new Game();
+    rollMany(12, 10, game);
+    expect(game.getScore()).toEqual(300)
+  });
 });
