@@ -1,18 +1,20 @@
 import Game from "./Game";
 
+function rollMany(n, pins, game) {
+  for(let i=0; i < n; i++) {
+    game.roll(pins);
+  }
+}
+
 describe("Bowling game", () => {
   it("Debería mostrar un puntaje de 0 cuando los tiros fueron 0", () => {
     let game = new Game();
-    for(let i = 0; i < 20; i++) {
-      game.roll(0);
-    }
+    rollMany(20, 0, game);
     expect(game.getScore()).toEqual(0)
   });
   it("Debería mostrar un puntaje de 20 cuando los tiros fueron todos de 1", () => {
     let game = new Game();
-    for(let i = 0; i < 20; i++) {
-      game.roll(1);
-    }
+    rollMany(20, 1, game);
     expect(game.getScore()).toEqual(20)
   });
 });
